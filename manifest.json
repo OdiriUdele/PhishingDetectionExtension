@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Phishing Detector",
+    "version": "1.0",
+    "description": "A Phishing Detector extension", 
+    "permissions": ["activeTab", "scripting", "storage"],
+    "action": {
+      "default_icon": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "32": "img/icon32.png"
+      }
+    },
+    "icons": {
+      "16": "img/icon16.png",
+      "48": "img/icon48.png",
+      "32": "img/icon32.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"] 
+      }
+    ]
+  }
+  
