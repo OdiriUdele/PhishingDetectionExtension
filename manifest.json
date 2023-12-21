@@ -9,6 +9,8 @@
       "https://*/*"
     ],
     "action": {
+      "default_popup": "popup.html",
+      "default_js": ["popup.js"],
       "default_icon": {
         "16": "img/icon16.png",
         "48": "img/icon48.png",
