@@ -9,6 +9,22 @@ function onReady() {
             display(response)
         })
     }, 5000);
+
+    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+        console.log('Content script received message:', request);
+        if (request.action === 'fromPopup') {
+            console.log('Content script received message from popup:', request.data);
+    
+            //makeBackgroundCall(request.data);
+            // Process the message and send a response if needed
+            sendResponse({ success: true, message: 'Content script received the message' });
+            chrome.runtime.sendMessage({url: currentUrl}, function(response) {
+                console.log("Background2 response recieved ", response)
+                display(response)
+            })
+        }
+    
+    });
 }
 
 function hideDisplayNotice() {
